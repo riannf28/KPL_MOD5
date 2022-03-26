@@ -29,7 +29,8 @@ namespace modul5_1302200040
             video9.PrintVideoDetails();
             video10.PrintVideoDetails();
 
-            Console.WriteLine("Review Film " + "oleh");
+            Console.WriteLine("Review Film " + video1.getTitle() + " oleh " + user.getUsername());
+
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Diagnostics.Contracts;
 using System.Text;
 
 namespace modul5_1302200040
@@ -11,9 +13,17 @@ namespace modul5_1302200040
         private String Username;
         public SayaTubeUser(String Username)
         {
+            Debug.Assert(Username.Length <= 100, "Username maksimal 100 karakter");
+            Contract.Requires(this.Username != null);
             this.Username = Username;
+            Contract.Requires(uploadedVideos != null);
             uploadedVideos = new List<SayaTubeVideo>();
             
+        }
+
+        public String getUsername()
+        {
+            return Username;
         }
 
         public int GetTotalVideoPlayCount()
